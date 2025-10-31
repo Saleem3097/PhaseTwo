@@ -1,21 +1,28 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { useNavigation } from "expo-router";
 
 const Purple = () => {
+  const navigation = useNavigation();
   return (
-    <View
-      style={{
-        backgroundColor: "purple",
-        flex: 1,
-        justifyContent: "center",
-        alignContent: "center",
-      }}
-    >
-      <Text style={{ fontSize: 40, textAlign: "center" }}>Purple</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>Purple</Text>
+      <Button
+        title="Go to Tomato Screen"
+        onPress={() => navigation.navigate("Tomato")}
+      />
     </View>
   );
 };
 
 export default Purple;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "purple",
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: { fontSize: 40, textAlign: "center", color: "white" },
+});

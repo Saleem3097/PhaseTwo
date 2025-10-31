@@ -17,4 +17,7 @@
 
   we use : npx expo install react-native-gesture-handler 
   we use : import { useNavigation } from "expo-router"; hook for traveling from one screen to another
+  we use : npx expo install @react-navigation/native
+  npx expo install react-native-screens react-native-safe-area-context
+
 </P>

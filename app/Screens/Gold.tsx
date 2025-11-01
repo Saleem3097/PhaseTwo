@@ -1,9 +1,12 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { useNavigation } from "expo-router";
+import { useRoute, useNavigation } from "@react-navigation/native";
 
 const Gold = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<any>();
+  const route = useRoute<any>();
+  console.log(route.name);
+  console.log(route.params);
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Gold</Text>
@@ -11,6 +14,8 @@ const Gold = () => {
         title="Go to Purple Screen"
         onPress={() => navigation.navigate("Purple")}
       />
+      <Text>Hello, {route.params?.name}</Text>
+      <Text>Bol, {route.params?.title}</Text>
     </View>
   );
 };
